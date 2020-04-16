@@ -19,8 +19,6 @@ public class LdapConfig {
 
     public static Hashtable<String, String> createConnectionParamsKeyrus() {
 
-        System.out.println(INITIAL_FACTORY);
-        System.out.println(SECURITY_CREDENTIALS);
         final Hashtable<String, String> envDC = new Hashtable<>();
         envDC.put(Context.INITIAL_CONTEXT_FACTORY, INITIAL_FACTORY);
         envDC.put(Context.SECURITY_AUTHENTICATION, SECURITY_AUTHENTICATION);
