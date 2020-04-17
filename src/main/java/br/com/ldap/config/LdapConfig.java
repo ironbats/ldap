@@ -20,11 +20,11 @@ public class LdapConfig {
     public static Hashtable<String, String> createConnectionParamsKeyrus() {
 
         final Hashtable<String, String> envDC = new Hashtable<>();
-        envDC.put(Context.INITIAL_CONTEXT_FACTORY, INITIAL_FACTORY);
-        envDC.put(Context.SECURITY_AUTHENTICATION, SECURITY_AUTHENTICATION);
-        envDC.put(Context.SECURITY_PRINCIPAL, SECURITY_PRINCIPAL);
-        envDC.put(Context.SECURITY_CREDENTIALS, SECURITY_CREDENTIALS);
-        envDC.put(Context.PROVIDER_URL, String.format(LDAP_URL, PROVIDER_URL));
+        envDC.put(Context.INITIAL_CONTEXT_FACTORY, "com.sun.jndi.ldap.LdapCtxFactory");
+        envDC.put(Context.SECURITY_AUTHENTICATION, "simple");
+        envDC.put(Context.SECURITY_PRINCIPAL, "uid=admin,ou=system");
+        envDC.put(Context.SECURITY_CREDENTIALS, "secret");
+        envDC.put(Context.PROVIDER_URL, String.format(LDAP_URL, "localhost:10389"));
 
         return envDC;
     }
